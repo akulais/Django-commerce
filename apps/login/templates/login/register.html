@@ -1,0 +1,14 @@
+{% extends "login/base.html" %}
+{% block title %}Register a New User{% endblock %}
+{% block content%}
+
+<h1>Register Here!</h1>
+	<form action="{% url 'accounts-register' %}" method="POST">
+		{% csrf_token %}
+			{{ form }}
+		<input type="submit" name="submit"/>
+	</form>
+
+<a href="/">return to our landing page</a>
+
+{% endblock %}

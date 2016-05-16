@@ -1,0 +1,29 @@
+{% extends "login/base.html" %}
+{% block title %} {{ user }} is shopping{% endblock %}
+{% block content%}
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'django.contrib.auth.views.logout' %}?next=/">Logout</a>
+      <a class="navbar-brand" href="{% url 'accounts-add_product' %}">New Product</a>
+
+
+    </div>
+
+{% load staticfiles %}
+
+  <h1>Hello {{ user}}</h1>
+
+<img src="{% static "dog.jpg" %}" alt="My image"/>
+
+
+{% endblock %}
+

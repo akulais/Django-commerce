@@ -1,0 +1,12 @@
+{% extends "login/base.html" %}
+{% block title %}Add a New product{% endblock %}
+{% block content%}
+
+<h1>Product placement here</h1>
+	<form action="{% url 'accounts-add_product' %}" method="POST">
+		{% csrf_token %}
+			{{ form }}
+		<input type="submit" name="create"/>
+	</form>
+
+{% endblock %}
