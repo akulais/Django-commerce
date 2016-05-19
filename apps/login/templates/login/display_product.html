@@ -1,0 +1,24 @@
+{% extends "login/base.html" %}
+{% block title %}{{ object.product_name }}{% endblock %}
+{% block content%}
+  	<h1>{{ object.product_name }}</h1>
+  	<iframe src="{{ object.image_url }}"></iframe>
+  	<p>{{ object.description }}</p>
+  	<p>{{ object.price }}</p>
+	<p>{{ object.quantity }}</p>
+	{{ object.id }}
+	{{ user.id }}
+<form method="post" action="{% url 'accounts-order' %}">
+	{% csrf_token %}
+	{{ form }}
+
+		<!-- <input type="hidden" name="csrfmiddlewaretoken" value="{{ object.id }}"/> -->
+		<!-- <input type="hidden" name="csrfmiddlewaretoken" value="{{ user.id }}"/> -->
+		<!-- <input type="number" name="credit_card" placeholder="16 digit CC#"> -->
+		<!-- <input type="number" name="cid_num" placeholder="CID"> -->
+		<!-- <input type="date" name="cc_exp_date" placeholder="Exp date"> -->
+		<input type="submit" name="Order">
+	</form>
+	<p>1111222233334444</p>
+	<p>123</p>
+{% endblock %}
